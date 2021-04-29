@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+<record id="account_view_form" model="ir.ui.view">
+    <field name="name">customer.view.form</field>
+    <field name="model">customer.order</field>
+    <field name="arch" type="xml">
+        <form string="Customer Sale" class="">
+            <!-- <header>
+                <field name="state" widget="statusbar"/>
+                <button string="Confirm" name="confirm" type="object"  class="oe_highlight" attrs="{'invisible':[('state','=','confirm')]}"/> 
+
+            </header> -->
+            <sheet>  
+                              
+                <group>
+                    <group>
+                        <field name="name"/>
+                    </group>
+
+   
+                </group>  
+               
+            </sheet>
+        </form>
+    </field>
+</record>
+<!--tree view-->
+<record id="account_view_tree" model="ir.ui.view">
+    <field name="name">customer.view.tree</field>
+    <field name="model">customer.order</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="name"/>
+    
+
+        </tree>
+    </field>
+</record>
+
+<!--action window-->
+<record id="customer_order_action" model="ir.actions.act_window">
+    <field name="name">Customer Order Details</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">customer.order</field>
+    <field name="view_mode">tree,form</field>
+  
+</record>
+
+<menuitem
+    id="training_root_menu"
+    name="Training"
+    sequence="10"/>
+    
+     
+     <menuitem
+        id="sale_menu"
+        name="SaleDetails"
+        action="customer_order_action"
+        parent="training_root_menu"
+        sequence="10"/>    
+</odoo>

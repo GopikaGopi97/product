@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+<record id="product_view_form" model="ir.ui.view">
+    <field name="name">product.sale.form</field>
+    <field name="model">product.sale</field>
+    <field name="arch" type="xml">
+        <form string="Product Sale" class="">
+             <sheet>                    
+                <group>
+                    
+                    <group>
+                        <field name="name"/>
+                    </group>
+                    <group>
+                        <field name="price"/>
+                    </group>
+                    <group>
+                        <field name="currency_id"/>
+                    </group>
+
+
+                    
+                </group>  
+               
+            </sheet>
+        </form>
+    </field>
+</record>
+<!--tree view-->
+<record id="product_view_tree" model="ir.ui.view">
+    <field name="name">product.view.tree</field>
+    <field name="model">product.sale</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="name"/>
+            <field name="price"/>
+            <field name="currency_id"/>
+
+        </tree>
+    </field>
+</record>
+
+<!--action window-->
+<record id="product_order_action" model="ir.actions.act_window">
+    <field name="name">product sale Details</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">product.sale</field>
+    <field name="view_mode">tree,form</field>
+  
+</record>
+
+<menuitem
+    id="training_root_menu"
+    name="Training"
+    sequence="10"/>
+
+    
+     
+        <menuitem
+            id="sale_order_menu"
+            name="Product Details"
+            action="product_order_action"
+            parent="training_root_menu"
+            sequence="10"/>    
+
+</odoo>

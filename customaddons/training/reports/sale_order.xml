@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    <!-- <template id="action_report_sale_order">
+        <t t-call="web.external_layout">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <h2>Patient Card</h2>
+                </t>
+            </t>
+        </t>
+    </template>
+ -->
+
+
+ <template id="report_sale">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="web.external_layout">
+                        <div class="page">
+                            <div class="oe_structure"/>
+                            <div class="row">
+                                 <div class="col-xs-6">
+                                     <group>
+                                         <group>Name:<t t-esc="doc.name_id.name"/><br/></group>
+                                        <group>Order Date:<t t-esc="doc.date"/><br/></group>
+                                    </group>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <h1>Sale Details</h1>
+                        <table class="table table-bordered mb64">
+                            <thead>
+                                <tr>
+                                    <th name="th_product_id" class="text-center">OrderLine</th>
+                                    <th name="th_price" class="text-center">Price</th>
+                                    <th name="th_quantity" class="text-center">Quantity</th>
+                                    <th name="th_subtotal" class="text-center">Subtotal</th>
+                                     
+                                   
+                                </tr>
+                            </thead>
+                            <tbody class="sale_tbody">
+
+                                <t t-foreach="doc.sale_orderline_ids" t-as="line" class="text-right">
+                                    <tr>
+                                        <td><t t-esc="line.product_id.name"/></td>
+                                        <td><t t-esc="line.quantity"/></td>
+                                        <td><t t-esc="line.price"/></td>
+                                        <td><t t-esc="line.subtotal"/></td>
+                                        
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                        
+
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_mark_list,training_mark_list,model_mark_list,base.group_user,1,1,1,1
+access_hobby_list,training_hobby_list,model_hobby_list,base.group_user,1,1,1,1
+access_customer_order,customer.order,model_customer_order,base.group_user,1,1,1,1
+access_product_sale,product.sale,model_product_sale,base.group_user,1,1,1,1
+access_sale_records,sale.records,model_sale_records,base.group_user,1,1,1,1
+access_sale_orderline,sale.orderline,model_sale_orderline,base.group_user,1,1,1,1
